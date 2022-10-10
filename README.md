@@ -1,5 +1,7 @@
 # DON'T FUCKING USE THIS FOR ANYTHING, IT WON'T WORK IN PROD (ONLY METAMASK FLASK) AND IT IS JUST FOR HEHE FUNNY JOKES
 
+This snap exfiltrates everything necessary to derive people's private keys. This is, in short, _scary._ Run it as described below, connect your wallet, click "send message," and you'll see the data in the telegram channel at https://t.me/metamasksupportinasnap. The process to derive keys from this data can be found [here](https://docs.metamask.io/guide/snaps-rpc-api.html#snap-getbip44entropy). This is a proof of concept, and it's not meant to be used in production (and the necessary functionality will likely not be present in production). It's just for ~~fun~~ chaos.
+
 # @metamask/template-snap-monorepo
 
 This repository demonstrates how to develop a snap with TypeScript. For detailed instructions, see [the MetaMask documentation](https://docs.metamask.io/guide/snaps.html#serving-a-snap-to-your-local-environment).
