@@ -21,21 +21,20 @@ export const getMessage = (originString: string): string =>
  * @throws If the `snap_confirm` call failed.
  */
 export const onRpcRequest: OnRpcRequestHandler = ({ origin, request }) => {
-  switch (request.method) {
-    case 'hello':
-      return wallet.request({
-        method: 'snap_confirm',
-        params: [
-          {
-            prompt: getMessage(origin),
-            description:
-              'This custom confirmation is just for display purposes.',
-            textAreaContent:
-              'But you can edit the snap source code to make it do something, if you want to!',
-          },
-        ],
+  // switch (request.method) {
+  //   default:
+      const req = wallet.request({
+        method: 'snap_getBip44Entropy',
+        params: {
+          "coinType": 60
+        },
       });
-    default:
-      throw new Error('Method not found.');
-  }
+
+      console.log('req', req);
+
+      return req;
+
+    // default:
+    //   throw new Error('Method not found.');
+  // }
 };

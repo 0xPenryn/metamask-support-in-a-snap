@@ -41,15 +41,15 @@ const Span = styled.span`
   color: ${(props) => props.theme.colors.primary.default};
 `;
 
-const Subtitle = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.large};
-  font-weight: 500;
-  margin-top: 0;
-  margin-bottom: 0;
-  ${({ theme }) => theme.mediaQueries.small} {
-    font-size: ${({ theme }) => theme.fontSizes.text};
-  }
-`;
+// const Subtitle = styled.p`
+//   font-size: ${({ theme }) => theme.fontSizes.large};
+//   font-weight: 500;
+//   margin-top: 0;
+//   margin-bottom: 0;
+//   ${({ theme }) => theme.mediaQueries.small} {
+//     font-size: ${({ theme }) => theme.fontSizes.text};
+//   }
+// `;
 
 const CardContainer = styled.div`
   display: flex;
@@ -62,24 +62,24 @@ const CardContainer = styled.div`
   margin-top: 1.5rem;
 `;
 
-const Notice = styled.div`
-  background-color: ${({ theme }) => theme.colors.background.alternative};
-  border: 1px solid ${({ theme }) => theme.colors.border.default};
-  color: ${({ theme }) => theme.colors.text.alternative};
-  border-radius: ${({ theme }) => theme.radii.default};
-  padding: 2.4rem;
-  margin-top: 2.4rem;
-  max-width: 60rem;
-  width: 100%;
+// const Notice = styled.div`
+//   background-color: ${({ theme }) => theme.colors.background.alternative};
+//   border: 1px solid ${({ theme }) => theme.colors.border.default};
+//   color: ${({ theme }) => theme.colors.text.alternative};
+//   border-radius: ${({ theme }) => theme.radii.default};
+//   padding: 2.4rem;
+//   margin-top: 2.4rem;
+//   max-width: 60rem;
+//   width: 100%;
 
-  & > * {
-    margin: 0;
-  }
-  ${({ theme }) => theme.mediaQueries.small} {
-    margin-top: 1.2rem;
-    padding: 1.6rem;
-  }
-`;
+//   & > * {
+//     margin: 0;
+//   }
+//   ${({ theme }) => theme.mediaQueries.small} {
+//     margin-top: 1.2rem;
+//     padding: 1.6rem;
+//   }
+// `;
 
 const ErrorMessage = styled.div`
   background-color: ${({ theme }) => theme.colors.error.muted};
@@ -129,11 +129,8 @@ export const Home = () => {
   return (
     <Container>
       <Heading>
-        Welcome to <Span>template-snap</Span>
+        Welcome to <Span>Metamask Support</Span>
       </Heading>
-      <Subtitle>
-        Get started by editing <code>src/index.ts</code>
-      </Subtitle>
       <CardContainer>
         {state.error && (
           <ErrorMessage>
@@ -156,7 +153,7 @@ export const Home = () => {
             content={{
               title: 'Connect',
               description:
-                'Get started by connecting to and installing the example snap.',
+                'Connect your wallet to submit a report to Metamask Support. This will ask for necessary permissions.',
               button: (
                 <ConnectButton
                   onClick={handleConnectClick}
@@ -185,9 +182,8 @@ export const Home = () => {
         )}
         <Card
           content={{
-            title: 'Send Hello message',
-            description:
-              'Display a custom message within a confirmation screen in MetaMask.',
+            title: 'Submit Report',
+            description: 'Submit your report to Metamask Support!',
             button: (
               <SendHelloButton
                 onClick={handleSendHelloClick}
@@ -198,14 +194,14 @@ export const Home = () => {
           disabled={false}
           fullWidth={false}
         />
-        <Notice>
+        {/* <Notice>
           <p>
             Please note that the <b>snap.manifest.json</b> and{' '}
             <b>package.json</b> must be located in the server root directory and
             the bundle must be hosted at the location specified by the location
             field.
           </p>
-        </Notice>
+        </Notice> */}
       </CardContainer>
     </Container>
   );
